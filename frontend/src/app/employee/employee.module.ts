@@ -1,7 +1,26 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
+import { SharedModule } from '../shared/shared.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ApplyLeaveComponent } from './apply-leave/apply-leave.component';
+import { MyLeavesComponent } from './my-leaves/my-leaves.component';
+import { NavbarComponent } from './navbar/navbar.component';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: NavbarComponent,
+    children: [
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'apply-leave', component: ApplyLeaveComponent },
+      { path: 'my-leaves', component: MyLeavesComponent },
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
+    ]
+  }
+];
 
 @NgModule({
-  imports: [CommonModule]
+  declarations: [DashboardComponent, ApplyLeaveComponent, MyLeavesComponent, NavbarComponent],
+  imports: [SharedModule, RouterModule.forChild(routes)]
 })
 export class EmployeeModule { }
