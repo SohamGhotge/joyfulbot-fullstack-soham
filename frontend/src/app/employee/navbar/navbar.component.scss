@@ -1,1 +1,105 @@
- 
+.sidenav-container {
+  height: 100vh;
+}
+
+.sidenav {
+  width: 250px;
+  background: #1e293b;
+  color: #f8fafc;
+  border-right: none;
+
+  .sidenav-header {
+    padding: 32px 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    .logo-icon {
+      font-size: 40px;
+      width: 40px;
+      height: 40px;
+      margin-bottom: 12px;
+      color: #818cf8;
+    }
+
+    h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin: 0;
+      letter-spacing: 0.5px;
+    }
+
+    p {
+      font-size: 13px;
+      margin: 6px 0 0;
+      color: #94a3b8;
+    }
+  }
+
+  mat-nav-list {
+    padding-top: 24px;
+
+    a {
+      color: #cbd5e1;
+      height: 48px;
+      margin: 4px 12px;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: all 0.2s ease-in-out;
+
+      mat-icon {
+        margin-right: 12px;
+        color: #94a3b8;
+        transition: color 0.2s ease-in-out;
+      }
+
+      &.active-link {
+        background: rgba(99, 102, 241, 0.15);
+        color: #a5b4fc;
+
+        mat-icon {
+          color: #a5b4fc;
+        }
+      }
+
+      &:hover:not(.active-link) {
+        background: rgba(255, 255, 255, 0.04);
+        color: #f8fafc;
+
+        mat-icon {
+          color: #cbd5e1;
+        }
+      }
+    }
+  }
+
+  .sidenav-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    .logout-btn {
+      color: #fda4af;
+      width: 100%;
+      border-radius: 8px;
+      transition: background 0.2s;
+
+      mat-icon {
+        margin-right: 8px;
+      }
+
+      &:hover {
+        background: rgba(244, 63, 94, 0.1);
+      }
+    }
+  }
+}
+
+.main-content {
+  background: #f8fafc;
+}
+
+.content-area {
+  padding: 32px;
+}
