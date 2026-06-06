@@ -1,1 +1,37 @@
-<p>login works</p>
+<div class="login-container">
+  <mat-card class="login-card">
+    <mat-card-header>
+      <mat-card-title>Employee Leave Management</mat-card-title>
+      <mat-card-subtitle>Sign in to your account</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" type="email" placeholder="Enter your email">
+          <mat-icon matSuffix>email</mat-icon>
+          <mat-error>{{ getEmailError() }}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput formControlName="password" [type]="hidePassword ? 'password' : 'text'" placeholder="Enter your password">
+          <button mat-icon-button matSuffix type="button" (click)="hidePassword = !hidePassword">
+            <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+          </button>
+          <mat-error>{{ getPasswordError() }}</mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" class="full-width mt-16" type="submit" [disabled]="loading">
+          <mat-spinner diameter="20" *ngIf="loading" style="display:inline-block; margin-right:8px;"></mat-spinner>
+          {{ loading ? 'Signing in...' : 'Sign In' }}
+        </button>
+      </form>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <p class="text-center">Don't have an account? <a routerLink="/auth/register">Register here</a></p>
+    </mat-card-actions>
+  </mat-card>
+</div>
