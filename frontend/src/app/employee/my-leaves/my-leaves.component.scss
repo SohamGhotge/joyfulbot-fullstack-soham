@@ -1,1 +1,108 @@
- 
+.my-leaves-container {
+  max-width: 1100px;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+
+  h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+    letter-spacing: -0.5px;
+  }
+
+  button {
+    border-radius: 8px;
+    font-weight: 500;
+    box-shadow: 0 4px 6px -1px rgba(63, 81, 181, 0.2);
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 12px -1px rgba(63, 81, 181, 0.3);
+    }
+  }
+}
+
+mat-card {
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  padding: 12px;
+}
+
+.filter-row {
+  margin-bottom: 20px;
+
+  mat-form-field {
+    width: 200px;
+  }
+}
+
+.mat-table {
+  width: 100%;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+
+  th {
+    color: #475569;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 16px;
+    background: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  td {
+    color: #334155;
+    font-size: 14px;
+    padding: 16px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+}
+
+.status-pending {
+  background: rgba(249, 115, 22, 0.1);
+  color: #ea580c;
+  padding: 4px 10px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.status-approved {
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669;
+  padding: 4px 10px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.status-rejected {
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+  padding: 4px 10px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.mat-paginator {
+  background: transparent;
+  margin-top: 16px;
+}

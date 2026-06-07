@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ApplyLeaveComponent } from './apply-leave/apply-leave.component';
@@ -21,6 +22,6 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [DashboardComponent, ApplyLeaveComponent, MyLeavesComponent, NavbarComponent],
-  imports: [SharedModule, RouterModule.forChild(routes)]
+  imports: [SharedModule, RouterModule.forChild(routes), FormsModule]
 })
 export class EmployeeModule { }

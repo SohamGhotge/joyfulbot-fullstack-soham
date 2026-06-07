@@ -1,0 +1,22 @@
+<h2 mat-dialog-title>
+  {{ data.action === 'approve' ? 'Approve' : 'Reject' }} Leave Request
+</h2>
+
+<mat-dialog-content>
+  <p><strong>Employee:</strong> {{ data.leave.employeeName }}</p>
+  <p><strong>Leave Type:</strong> {{ data.leave.leaveTypeName }}</p>
+  <p><strong>Dates:</strong> {{ data.leave.startDate }} to {{ data.leave.endDate }} ({{ data.leave.totalDays }} days)</p>
+  <p><strong>Reason:</strong> {{ data.leave.reason }}</p>
+
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Remarks (optional)</mat-label>
+    <textarea matInput [formControl]="reviewForm.get('remarks')" rows="3" placeholder="Add your remarks here"></textarea>
+  </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-raised-button [color]="data.action === 'approve' ? 'primary' : 'warn'" (click)="onConfirm()">
+    {{ data.action === 'approve' ? 'Approve' : 'Reject' }}
+  </button>
+</mat-dialog-actions>

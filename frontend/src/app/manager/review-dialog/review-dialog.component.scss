@@ -1,0 +1,27 @@
+mat-dialog-content {
+  p {
+    margin-bottom: 8px;
+    color: #475569;
+    font-size: 14px;
+    line-height: 1.5;
+
+    strong {
+      color: #0f172a;
+      font-weight: 600;
+    }
+  }
+
+  mat-form-field {
+    margin-top: 16px;
+    width: 100%;
+  }
+}
+
+mat-dialog-actions {
+  padding: 16px 0 0;
+  
+  button {
+    border-radius: 8px;
+    font-weight: 500;
+  }
+}

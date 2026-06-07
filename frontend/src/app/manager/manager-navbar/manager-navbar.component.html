@@ -1,2 +1,37 @@
-<p>manager-navbar works</p>
-<router-outlet></router-outlet>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav mode="side" opened class="sidenav">
+    <div class="sidenav-header">
+      <mat-icon class="logo-icon">admin_panel_settings</mat-icon>
+      <h3>ELMS</h3>
+      <p>{{ userName }}</p>
+      <span class="role-badge">Manager</span>
+    </div>
+
+    <mat-nav-list>
+      <a mat-list-item routerLink="/manager/dashboard" routerLinkActive="active-link">
+        <mat-icon matListIcon>dashboard</mat-icon>
+        <span>Dashboard</span>
+      </a>
+      <a mat-list-item routerLink="/manager/team-leaves" routerLinkActive="active-link">
+        <mat-icon matListIcon>group</mat-icon>
+        <span>Team Leaves</span>
+      </a>
+    </mat-nav-list>
+
+    <div class="sidenav-footer">
+      <button mat-button (click)="logout()" class="logout-btn">
+        <mat-icon>exit_to_app</mat-icon>
+        Logout
+      </button>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="main-content">
+    <mat-toolbar color="accent">
+      <span>Employee Leave Management System — Manager Portal</span>
+    </mat-toolbar>
+    <div class="content-area">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
