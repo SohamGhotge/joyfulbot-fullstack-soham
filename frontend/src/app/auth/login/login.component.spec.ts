@@ -65,14 +65,14 @@ describe('LoginComponent', () => {
     expect(password.hasError('required')).toBeTruthy();
     password.setValue('123');
     expect(password.hasError('minlength')).toBeTruthy();
-    password.setValue('Employee@123');
+    password.setValue('password123');
     expect(password.valid).toBeTruthy();
   });
 
   it('should have valid form when all fields filled correctly', () => {
     component.loginForm.setValue({
       email: 'soham.naik@joyfulbot.com',
-      password: 'Employee@123'
+      password: 'password123'
     });
     expect(component.loginForm.valid).toBeTruthy();
   });

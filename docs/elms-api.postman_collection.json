@@ -36,7 +36,7 @@
             "header": [{ "key": "Content-Type", "value": "application/json" }],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"email\": \"soham.naik@joyfulbot.com\",\n  \"password\": \"Employee@123\"\n}"
+              "raw": "{\n  \"email\": \"soham.naik@joyfulbot.com\",\n  \"password\": \"password123\"\n}"
             }
           },
           "event": [{
@@ -52,7 +52,7 @@
             "header": [{ "key": "Content-Type", "value": "application/json" }],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"email\": \"raj.mehta@joyfulbot.com\",\n  \"password\": \"Manager@123\"\n}"
+              "raw": "{\n  \"email\": \"raj.mehta@joyfulbot.com\",\n  \"password\": \"password123\"\n}"
             }
           },
           "event": [{

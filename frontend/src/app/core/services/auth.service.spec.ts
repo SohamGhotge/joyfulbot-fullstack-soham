@@ -40,7 +40,7 @@ describe('AuthService', () => {
       }
     };
 
-    service.login({ email: 'soham.naik@joyfulbot.com', password: 'Employee@123' }).subscribe(user => {
+    service.login({ email: 'soham.naik@joyfulbot.com', password: 'password123' }).subscribe(user => {
       expect(user.token).toBe('mock-jwt-token');
       expect(user.role).toBe('EMPLOYEE');
       expect(service.isLoggedIn()).toBe(true);

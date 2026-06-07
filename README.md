@@ -86,12 +86,12 @@ Frontend starts on `http://localhost:4200`
 
 | Role | Email | Password |
 |------|-------|----------|
-| Manager | raj.mehta@joyfulbot.com | Manager@123 |
-| Employee | soham.naik@joyfulbot.com | Employee@123 |
-| Employee | priya.sharma@joyfulbot.com | Employee@123 |
-| Employee | amit.joshi@joyfulbot.com | Employee@123 |
-| Employee | neha.kulkarni@joyfulbot.com | Employee@123 |
-| Employee | rohit.das@joyfulbot.com | Employee@123 |
+| Manager | raj.mehta@joyfulbot.com | password123 |
+| Employee | soham.naik@joyfulbot.com | password123 |
+| Employee | priya.sharma@joyfulbot.com | password123 |
+| Employee | amit.joshi@joyfulbot.com | password123 |
+| Employee | neha.kulkarni@joyfulbot.com | password123 |
+| Employee | rohit.das@joyfulbot.com | password123 |
 
 ---
 
