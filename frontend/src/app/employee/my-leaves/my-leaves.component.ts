@@ -11,7 +11,7 @@ import { LeaveApplication } from '../../core/models/leave.model';
 })
 export class MyLeavesComponent implements OnInit {
 
-  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+  @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
 
   leaves: LeaveApplication[] = [];
   displayedColumns = ['leaveType', 'startDate', 'endDate', 'totalDays', 'reason', 'status', 'appliedAt', 'actions'];
@@ -52,7 +52,9 @@ export class MyLeavesComponent implements OnInit {
   }
 
   onStatusChange() {
-    this.paginator.pageIndex = 0;
+    if (this.paginator) {
+      this.paginator.pageIndex = 0;
+    }
     this.loadLeaves(0);
   }
 

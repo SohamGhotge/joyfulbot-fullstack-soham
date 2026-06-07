@@ -1,13 +1,15 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav mode="side" opened class="sidenav">
     <div class="sidenav-header">
-      <mat-icon class="logo-icon">admin_panel_settings</mat-icon>
+      <div class="brand-icon">
+        <mat-icon>business_center</mat-icon>
+      </div>
       <h3>ELMS</h3>
-      <p>{{ userName }}</p>
-      <span class="role-badge">Manager</span>
+      <p class="user-name">{{ userName }}</p>
+      <span class="role-chip">Manager</span>
     </div>
 
-    <mat-nav-list>
+    <mat-nav-list class="nav-list">
       <a mat-list-item routerLink="/manager/dashboard" routerLinkActive="active-link">
         <mat-icon matListIcon>dashboard</mat-icon>
         <span>Dashboard</span>
@@ -20,16 +22,13 @@
 
     <div class="sidenav-footer">
       <button mat-button (click)="logout()" class="logout-btn">
-        <mat-icon>exit_to_app</mat-icon>
-        Logout
+        <mat-icon>logout</mat-icon>
+        <span>Logout</span>
       </button>
     </div>
   </mat-sidenav>
 
   <mat-sidenav-content class="main-content">
-    <mat-toolbar color="accent">
-      <span>Employee Leave Management System — Manager Portal</span>
-    </mat-toolbar>
     <div class="content-area">
       <router-outlet></router-outlet>
     </div>

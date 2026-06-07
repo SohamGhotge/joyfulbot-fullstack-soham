@@ -1,8 +1,10 @@
-<div class="dashboard-container">
-  <div class="welcome-section">
-    <h2>Welcome back, {{ userName }}!</h2>
-    <p>Here's your leave summary</p>
-    <button mat-raised-button color="accent" (click)="navigateToApply()">
+<div class="dashboard">
+  <div class="page-header">
+    <div>
+      <h2>Good day, {{ userName }}!</h2>
+      <p>Here is your leave summary for this year</p>
+    </div>
+    <button mat-raised-button color="primary" (click)="navigateToApply()">
       <mat-icon>add</mat-icon> Apply for Leave
     </button>
   </div>
@@ -12,64 +14,57 @@
   </div>
 
   <div *ngIf="!loading">
-    <h3 class="section-title">Leave Balances</h3>
-    <div class="balance-cards">
-      <mat-card class="balance-card" *ngFor="let balance of balances">
-        <mat-card-header>
-          <mat-card-title>{{ balance.leaveTypeName }}</mat-card-title>
-          <mat-card-subtitle>Year {{ balance.year }}</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-          <div class="balance-info">
-            <div class="balance-item">
-              <span class="balance-label">Total</span>
-              <span class="balance-value">{{ balance.totalDays }}</span>
-            </div>
-            <div class="balance-item">
-              <span class="balance-label">Used</span>
-              <span class="balance-value used">{{ balance.usedDays }}</span>
-            </div>
-            <div class="balance-item">
-              <span class="balance-label">Remaining</span>
-              <span class="balance-value remaining">{{ balance.remainingDays }}</span>
-            </div>
+    <h3 class="section-label">Leave Balances</h3>
+    <div class="balance-grid">
+      <div class="balance-card" *ngFor="let balance of balances">
+        <div class="balance-card-header">
+          <mat-icon>event_available</mat-icon>
+          <span>{{ balance.leaveTypeName }}</span>
+        </div>
+        <div class="balance-stats">
+          <div class="stat">
+            <span class="stat-value">{{ balance.totalDays }}</span>
+            <span class="stat-label">Total</span>
           </div>
-        </mat-card-content>
-      </mat-card>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-value warning">{{ balance.usedDays }}</span>
+            <span class="stat-label">Used</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-value success">{{ balance.remainingDays }}</span>
+            <span class="stat-label">Left</span>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <h3 class="section-title mt-24">Recent Applications</h3>
-    <mat-card *ngIf="recentLeaves.length === 0">
-      <mat-card-content>
-        <p class="text-center">No leave applications yet.</p>
-      </mat-card-content>
-    </mat-card>
-
-    <mat-card *ngIf="recentLeaves.length > 0">
-      <mat-card-content>
-        <table mat-table [dataSource]="recentLeaves" class="full-width">
-          <ng-container matColumnDef="leaveType">
-            <th mat-header-cell *matHeaderCellDef>Leave Type</th>
-            <td mat-cell *matCellDef="let leave">{{ leave.leaveTypeName }}</td>
-          </ng-container>
-          <ng-container matColumnDef="dates">
-            <th mat-header-cell *matHeaderCellDef>Dates</th>
-            <td mat-cell *matCellDef="let leave">{{ leave.startDate }} to {{ leave.endDate }}</td>
-          </ng-container>
-          <ng-container matColumnDef="days">
-            <th mat-header-cell *matHeaderCellDef>Days</th>
-            <td mat-cell *matCellDef="let leave">{{ leave.totalDays }}</td>
-          </ng-container>
-          <ng-container matColumnDef="status">
-            <th mat-header-cell *matHeaderCellDef>Status</th>
-            <td mat-cell *matCellDef="let leave">
-              <span [class]="getStatusClass(leave.status)">{{ leave.status }}</span>
-            </td>
-          </ng-container>
-          <tr mat-header-row *matHeaderRowDef="['leaveType', 'dates', 'days', 'status']"></tr>
-          <tr mat-row *matRowDef="let row; columns: ['leaveType', 'dates', 'days', 'status']"></tr>
-        </table>
-      </mat-card-content>
-    </mat-card>
+    <h3 class="section-label mt-24">Recent Applications</h3>
+    <div class="page-card">
+      <p class="empty-state" *ngIf="recentLeaves.length === 0">No leave applications yet.</p>
+      <table mat-table [dataSource]="recentLeaves" *ngIf="recentLeaves.length > 0">
+        <ng-container matColumnDef="leaveType">
+          <th mat-header-cell *matHeaderCellDef>Leave Type</th>
+          <td mat-cell *matCellDef="let leave">{{ leave.leaveTypeName }}</td>
+        </ng-container>
+        <ng-container matColumnDef="dates">
+          <th mat-header-cell *matHeaderCellDef>Dates</th>
+          <td mat-cell *matCellDef="let leave">{{ leave.startDate }} — {{ leave.endDate }}</td>
+        </ng-container>
+        <ng-container matColumnDef="days">
+          <th mat-header-cell *matHeaderCellDef>Days</th>
+          <td mat-cell *matCellDef="let leave">{{ leave.totalDays }}</td>
+        </ng-container>
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef>Status</th>
+          <td mat-cell *matCellDef="let leave">
+            <span [class]="getStatusClass(leave.status)">{{ leave.status }}</span>
+          </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="['leaveType','dates','days','status']"></tr>
+        <tr mat-row *matRowDef="let row; columns: ['leaveType','dates','days','status']"></tr>
+      </table>
+    </div>
   </div>
 </div>

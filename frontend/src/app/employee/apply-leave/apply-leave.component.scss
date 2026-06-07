@@ -1,30 +1,20 @@
 .apply-container {
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 680px;
+}
 
-  mat-card {
-    border-radius: 16px;
-    padding: 24px;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+.page-header {
+  margin-bottom: 24px;
+
+  h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 4px;
   }
 
-  mat-card-header {
-    margin-bottom: 28px;
-    display: block;
-
-    mat-card-title {
-      font-size: 22px;
-      font-weight: 700;
-      color: #0f172a;
-      letter-spacing: -0.5px;
-    }
-
-    mat-card-subtitle {
-      font-size: 14px;
-      color: #64748b;
-      margin-top: 6px;
-    }
+  p {
+    color: #6b7280;
+    font-size: 14px;
   }
 }
 
@@ -32,26 +22,28 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
-  margin-bottom: 8px;
 
   mat-form-field {
     width: 100%;
   }
 }
 
-.days-card {
-  background: rgba(16, 185, 129, 0.08) !important;
-  margin-bottom: 20px;
-  border-left: 4px solid #10b981;
-  border-radius: 8px !important;
-  box-shadow: none !important;
-  padding: 12px 16px !important;
+.days-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  padding: 10px 16px;
+  margin-bottom: 16px;
+  color: #16a34a;
+  font-size: 14px;
 
-  p {
-    color: #059669;
-    margin: 0;
-    font-size: 14px;
-    font-weight: 600;
+  mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
   }
 }
 
@@ -59,19 +51,5 @@
   display: flex;
   justify-content: flex-end;
   gap: 12px;
-  margin-top: 24px;
-
-  button {
-    border-radius: 8px;
-    font-weight: 500;
-  }
-
-  button[type="submit"] {
-    transition: all 0.2s ease-in-out;
-
-    &:not([disabled]):hover {
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(63, 81, 181, 0.25);
-    }
-  }
+  margin-top: 8px;
 }

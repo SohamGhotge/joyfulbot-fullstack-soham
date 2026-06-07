@@ -1,22 +1,41 @@
-<h2 mat-dialog-title>
-  {{ data.action === 'approve' ? 'Approve' : 'Reject' }} Leave Request
-</h2>
+<div class="dialog-container">
+  <h2 mat-dialog-title class="dialog-title">
+    <mat-icon [class]="data.action === 'approve' ? 'approve-icon' : 'reject-icon'">
+      {{ data.action === 'approve' ? 'check_circle_outline' : 'highlight_off' }}
+    </mat-icon>
+    {{ data.action === 'approve' ? 'Approve Leave Request' : 'Reject Leave Request' }}
+  </h2>
 
-<mat-dialog-content>
-  <p><strong>Employee:</strong> {{ data.leave.employeeName }}</p>
-  <p><strong>Leave Type:</strong> {{ data.leave.leaveTypeName }}</p>
-  <p><strong>Dates:</strong> {{ data.leave.startDate }} to {{ data.leave.endDate }} ({{ data.leave.totalDays }} days)</p>
-  <p><strong>Reason:</strong> {{ data.leave.reason }}</p>
+  <mat-dialog-content>
+    <div class="leave-details">
+      <div class="detail-row">
+        <span class="detail-label">Employee</span>
+        <span class="detail-value">{{ data.leave.employeeName }}</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">Leave Type</span>
+        <span class="detail-value">{{ data.leave.leaveTypeName }}</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">Duration</span>
+        <span class="detail-value">{{ data.leave.startDate }} — {{ data.leave.endDate }} ({{ data.leave.totalDays }} days)</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">Reason</span>
+        <span class="detail-value">{{ data.leave.reason }}</span>
+      </div>
+    </div>
 
-  <mat-form-field class="full-width" appearance="outline">
-    <mat-label>Remarks (optional)</mat-label>
-    <textarea matInput [formControl]="reviewForm.get('remarks')" rows="3" placeholder="Add your remarks here"></textarea>
-  </mat-form-field>
-</mat-dialog-content>
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Remarks (optional)</mat-label>
+      <textarea matInput [formControl]="reviewForm.get('remarks')" rows="3" placeholder="Add your remarks"></textarea>
+    </mat-form-field>
+  </mat-dialog-content>
 
-<mat-dialog-actions align="end">
-  <button mat-button (click)="onCancel()">Cancel</button>
-  <button mat-raised-button [color]="data.action === 'approve' ? 'primary' : 'warn'" (click)="onConfirm()">
-    {{ data.action === 'approve' ? 'Approve' : 'Reject' }}
-  </button>
-</mat-dialog-actions>
+  <mat-dialog-actions align="end">
+    <button mat-stroked-button (click)="onCancel()">Cancel</button>
+    <button mat-raised-button [color]="data.action === 'approve' ? 'primary' : 'warn'" (click)="onConfirm()">
+      {{ data.action === 'approve' ? 'Approve' : 'Reject' }}
+    </button>
+  </mat-dialog-actions>
+</div>

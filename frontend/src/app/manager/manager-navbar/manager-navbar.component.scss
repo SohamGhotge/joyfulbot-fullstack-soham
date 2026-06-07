@@ -3,114 +3,166 @@
 }
 
 .sidenav {
-  width: 250px;
-  background: #0f172a;
-  color: #f8fafc;
-  border-right: none;
+  width: 256px;
+  background: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
 
   .sidenav-header {
-    padding: 32px 20px;
+    padding: 28px 20px 20px;
+    border-bottom: 1px solid #f3f4f6;
     text-align: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 
-    .logo-icon {
-      font-size: 44px;
-      width: 44px;
-      height: 44px;
-      margin-bottom: 12px;
-      color: #f59e0b;
+    .brand-icon {
+      width: 52px;
+      height: 52px;
+      background: #fff7ed;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px;
+
+      mat-icon {
+        color: #d97706;
+        font-size: 26px;
+        width: 26px;
+        height: 26px;
+      }
     }
 
     h3 {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 700;
-      margin: 0;
-      letter-spacing: 0.5px;
+      color: #111827;
+      margin-bottom: 4px;
     }
 
-    p {
+    .user-name {
       font-size: 13px;
-      margin: 6px 0 10px;
-      color: #94a3b8;
+      color: #6b7280;
+      margin-bottom: 8px;
     }
 
-    .role-badge {
-      background: #f59e0b;
-      color: #0f172a;
+    .role-chip {
+      display: inline-block;
+      background: #fff7ed;
+      color: #d97706;
       font-size: 11px;
       font-weight: 600;
-      padding: 3px 12px;
-      border-radius: 100px;
-      display: inline-block;
-      letter-spacing: 0.5px;
+      padding: 3px 10px;
+      border-radius: 20px;
     }
   }
 
-  mat-nav-list {
-    padding-top: 24px;
+  .nav-list {
+    flex: 1;
+    padding: 12px 10px;
 
     a {
-      color: #cbd5e1;
+      color: #6b7280;
       height: 48px;
-      margin: 4px 12px;
-      border-radius: 8px;
+      border-radius: 10px;
+      margin-bottom: 4px;
+      font-size: 14px;
       font-weight: 500;
-      transition: all 0.2s ease-in-out;
 
       mat-icon {
-        margin-right: 12px;
-        color: #94a3b8;
-        transition: color 0.2s ease-in-out;
+        color: #9ca3af;
+        margin-right: 10px;
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
       }
 
       &.active-link {
-        background: rgba(245, 158, 11, 0.12);
-        color: #fbbf24;
+        background: #fff7ed;
+        color: #d97706;
 
         mat-icon {
-          color: #fbbf24;
+          color: #d97706;
         }
       }
 
-      &:hover:not(.active-link) {
-        background: rgba(255, 255, 255, 0.04);
-        color: #f8fafc;
-
-        mat-icon {
-          color: #cbd5e1;
-        }
+      &:hover {
+        background: #f9fafb;
+        color: #111827;
       }
     }
   }
 
   .sidenav-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 16px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 16px 10px;
+    border-top: 1px solid #f3f4f6;
 
     .logout-btn {
-      color: #fda4af;
       width: 100%;
-      border-radius: 8px;
-      transition: background 0.2s;
+      color: #6b7280;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 8px;
 
       mat-icon {
-        margin-right: 8px;
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
       }
 
       &:hover {
-        background: rgba(244, 63, 94, 0.1);
+        background: #fee2e2;
+        color: #dc2626;
+
+        mat-icon {
+          color: #dc2626;
+        }
       }
     }
   }
 }
 
 .main-content {
-  background: #f8fafc;
-}
+  background: #f9fafb;
+  display: flex;
+  flex-direction: column;
 
-.content-area {
-  padding: 32px;
+  .top-bar {
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 0 24px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h4 {
+      font-size: 15px;
+      font-weight: 600;
+      color: #374151;
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #6b7280;
+      font-size: 14px;
+
+      mat-icon {
+        color: #d97706;
+        font-size: 22px;
+        width: 22px;
+        height: 22px;
+      }
+    }
+  }
+
+  .content-area {
+    padding: 24px;
+    flex: 1;
+    overflow-y: auto;
+  }
 }

@@ -8,37 +8,59 @@
 
 body {
   font-family: Roboto, sans-serif;
-  background-color: #f5f5f5;
+  background-color: #f9fafb;
+  color: #111827;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 24px;
 }
 
 .full-width {
   width: 100%;
 }
 
+.mt-8 { margin-top: 8px; }
 .mt-16 { margin-top: 16px; }
 .mt-24 { margin-top: 24px; }
+.mb-8 { margin-bottom: 8px; }
 .mb-16 { margin-bottom: 16px; }
 .text-center { text-align: center; }
 
+.status-chip {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
 .status-pending {
-  color: #f57c00;
-  font-weight: 500;
+  @extend .status-chip;
+  background: #fef3c7;
+  color: #d97706;
 }
 
 .status-approved {
-  color: #2e7d32;
-  font-weight: 500;
+  @extend .status-chip;
+  background: #dcfce7;
+  color: #16a34a;
 }
 
 .status-rejected {
-  color: #c62828;
-  font-weight: 500;
+  @extend .status-chip;
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.page-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+  padding: 24px;
 }
 
 .spinner-container {
@@ -46,4 +68,50 @@ body {
   justify-content: center;
   align-items: center;
   height: 200px;
+}
+
+.mat-button, .mat-raised-button, .mat-stroked-button {
+  border-radius: 8px !important;
+  text-transform: none !important;
+  letter-spacing: 0.3px !important;
+  font-weight: 500 !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  border-radius: 8px !important;
+}
+
+.mat-table {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+
+  .mat-header-row {
+    background: #f3f4f6;
+
+    .mat-header-cell {
+      font-weight: 600;
+      font-size: 13px;
+      color: #374151;
+      letter-spacing: 0.3px;
+      border-bottom: 2px solid #e5e7eb;
+    }
+  }
+
+  .mat-row {
+    &:nth-child(even) {
+      background: #f9fafb;
+    }
+
+    &:hover {
+      background: #eff6ff;
+      transition: background 0.2s ease;
+    }
+
+    .mat-cell {
+      font-size: 13px;
+      color: #374151;
+      border-bottom: 1px solid #f3f4f6;
+    }
+  }
 }
